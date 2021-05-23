@@ -1,0 +1,17 @@
+[Unit]
+Description=kodi service
+After=syslog.target network.target
+
+[Service]
+Environment="PATH=/usr/local/bin:/usr/bin
+Type=oneshot
+User=pi
+Group=pi
+ExecStart=/usr/local/bin/kodi.sh start
+ExecStop=/usr/local/bin/kodi.sh stop
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+
+
